@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.699,C:\Users\HOMA INC\Documents\Embarcadero\Studio\Projects\Labolatory work 1_1.cbproj=E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Labolatory work 1_1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.767,C:\Users\HOMA INC\Documents\Embarcadero\Studio\Projects\Circle.cpp=E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Circle.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.449,C:\Users\HOMA INC\Documents\Embarcadero\Studio\Projects\Project1.cbproj=C:\Users\HOMA INC\Documents\Embarcadero\Studio\Projects\Labolatory work 1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.279,C:\Users\HOMA INC\Documents\Embarcadero\Studio\Projects\Unit1.h=C:\Users\HOMA INC\Documents\Embarcadero\Studio\Projects\Circle.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.113,=C:\Users\HOMA INC\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.279,C:\Users\HOMA INC\Documents\Embarcadero\Studio\Projects\Unit1.cpp=C:\Users\HOMA INC\Documents\Embarcadero\Studio\Projects\Circle.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.335,E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Circle.h=E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\main.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.767,C:\Users\HOMA INC\Documents\Embarcadero\Studio\Projects\Circle.dfm=E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Circle.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.335,E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Circle.dfm=E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\main.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.484,C:\Users\HOMA INC\Documents\Embarcadero\Studio\Projects\Labolatory work 1_1PCH1.h=E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Labolatory work 1_1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.386,E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Unit1.h=E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Circle.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.182,E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Unit1.h=E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Polygon.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.567,E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Unit1.h=E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Triangle.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.182,E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Unit1.cpp=E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Polygon.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.248,=E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.387,=E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.444,C:\Users\HOMA INC\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=C:\Users\HOMA INC\Documents\Embarcadero\Studio\Projects\Labolatory work 1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.044,=C:\Users\HOMA INC\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.567,E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Unit1.cpp=E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Triangle.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.792,=E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.856,C:\Users\HOMA INC\Documents\Embarcadero\Studio\Projects\Labolatory work 1PCH1.h=C:\Users\HOMA INC\Documents\Embarcadero\Studio\Projects\Labolatory work 1_1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.767,C:\Users\HOMA INC\Documents\Embarcadero\Studio\Projects\Circle.h=E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Circle.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.334,E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Circle.cpp=E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\main.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.386,E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Unit1.cpp=E:\Study\Labolatory works 2017-2\Labolatory C++\Labolatory works builder C++\Labolatory work 1.1\Circle.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.862,C:\Users\HOMA INC\Documents\Embarcadero\Studio\Projects\Labolatory work 1.cbproj=C:\Users\HOMA INC\Documents\Embarcadero\Studio\Projects\Labolatory work 1_1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.279,C:\Users\HOMA INC\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\HOMA INC\Documents\Embarcadero\Studio\Projects\Circle.dfm</Transaction>
+  </Transactions>
+</BorlandProject>
