@@ -7,7 +7,7 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 Triangle::Triagle(double ay, double by, double cy,
-				  double ax, double bx, double cx){
+		  double ax, double bx, double cx){
 	 xCoordA = ax;
 	 xCoordB = bx;
 	 xCoordC = cx;
