@@ -45,10 +45,10 @@ void __fastcall TMainForm::SaveTrianglePointsClick(TObject *Sender)
 	yCoordCenter->Text = FloatToStr(ShapeTriangle.yCenter());
 // Clear PaintBox
 	TRect r;
-	r.Left=0;
-	r.right=1000;
-	r.Bottom=1000;
-	r.Top=0;
+	r.Left = 0;
+	r.right = 1000;
+	r.Bottom = 1000;
+	r.Top = 0;
 	PaintBox->Canvas->Brush->Color=clWhite;
 	PaintBox->Canvas->FillRect(r);
 // Drawing ShapeTriangle object
@@ -70,10 +70,10 @@ void __fastcall TMainForm::SaveCenterPointClick(TObject *Sender)
 	ShapeTriangle.setCenter(StrToFloat(xCoordCenter->Text),StrToFloat(yCoordCenter->Text));
 // Clear PaintBox
 	TRect r;
-	r.Left=0;
-	r.right=1000;
-	r.Bottom=1000;
-	r.Top=0;
+	r.Left = 0;
+	r.right = 1000;
+	r.Bottom = 1000;
+	r.Top = 0;
 	PaintBox->Canvas->Brush->Color=clWhite;
 	PaintBox->Canvas->FillRect(r);
 // Redrawing triangle
