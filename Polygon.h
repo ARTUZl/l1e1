@@ -8,10 +8,10 @@
 class Polygons {
 	public:
 		Polygons(double xA = 30, double yA = 30,
-				double xB = 100, double yB = 50,
-				double xC = 170, double yC = 170,
-				double xD = 130, double yD = 170,
-				double xE = 40, double yE = 200);
+			 double xB = 100, double yB = 50,
+			 double xC = 170, double yC = 170,
+			 double xD = 130, double yD = 170,
+			 double xE = 40, double yE = 200);
 		double getxCoordA();
 		double getxCoordB();
 		double getxCoordC();
