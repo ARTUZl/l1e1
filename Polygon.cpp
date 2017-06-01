@@ -8,10 +8,10 @@
 #pragma package(smart_init)
 
 Polygons::Polygons(double xA, double yA,
-				double xB, double yB,
-				double xC, double yC,
-				double xD, double yD,
-				double xE, double yE){
+		   double xB, double yB,
+		   double xC, double yC,
+		   double xD, double yD,
+		   double xE, double yE){
 	xCoordA = xA;
 	xCoordB = xB;
 	xCoordC = xC;
