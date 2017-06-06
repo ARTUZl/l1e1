@@ -37,9 +37,9 @@ void __fastcall TMainForm::SaveClick(TObject *Sender)
 void __fastcall TMainForm::SaveTrianglePointsClick(TObject *Sender)
 {
 // Set points values for object ShapeTriangle
-	ShapeTriangle.setPointA(StrToFloat(xCoordA->Text),StrToFloat(yCoordA->Text));
-	ShapeTriangle.setPointB(StrToFloat(xCoordB->Text),StrToFloat(yCoordB->Text));
-	ShapeTriangle.setPointC(StrToFloat(xCoordC->Text),StrToFloat(yCoordC->Text));
+	ShapeTriangle.setPointA(StrToFloat(xCoordA->Text), StrToFloat(yCoordA->Text));
+	ShapeTriangle.setPointB(StrToFloat(xCoordB->Text), StrToFloat(yCoordB->Text));
+	ShapeTriangle.setPointC(StrToFloat(xCoordC->Text), StrToFloat(yCoordC->Text));
 // Set values for edit form of center's point
 	xCoordCenter->Text = FloatToStr(ShapeTriangle.xCenter());
 	yCoordCenter->Text = FloatToStr(ShapeTriangle.yCenter());
@@ -49,15 +49,15 @@ void __fastcall TMainForm::SaveTrianglePointsClick(TObject *Sender)
 	r.right = 1000;
 	r.Bottom = 1000;
 	r.Top = 0;
-	PaintBox->Canvas->Brush->Color=clWhite;
+	PaintBox->Canvas->Brush->Color = clWhite;
 	PaintBox->Canvas->FillRect(r);
 // Drawing ShapeTriangle object
-	PaintBox->Canvas->MoveTo(ShapeTriangle.getxCoordA(),ShapeTriangle.getyCoordA());
-	PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordB(),ShapeTriangle.getyCoordB());
-	PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordC(),ShapeTriangle.getyCoordC());
-	PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordA(),ShapeTriangle.getyCoordA());
+	PaintBox->Canvas->MoveTo(ShapeTriangle.getxCoordA(), ShapeTriangle.getyCoordA());
+	PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordB(), ShapeTriangle.getyCoordB());
+	PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordC(), ShapeTriangle.getyCoordC());
+	PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordA(), ShapeTriangle.getyCoordA());
 // Drawing center of triangle
-	PaintBox->Canvas->Ellipse(ShapeTriangle.xCenter()-2,ShapeTriangle.yCenter()-2,ShapeTriangle.xCenter()+2,ShapeTriangle.yCenter()+2);
+	PaintBox->Canvas->Ellipse(ShapeTriangle.xCenter() - 2, ShapeTriangle.yCenter() - 2, ShapeTriangle.xCenter() + 2, ShapeTriangle.yCenter() + 2);
 // Set info
    	LabelInfoText->Caption = "Square: " + FloatToStr(ShapeTriangle.Square()) + "\n" + "Perimeter: " + FloatToStr(ShapeTriangle.Perimeter());
 
@@ -67,22 +67,22 @@ void __fastcall TMainForm::SaveTrianglePointsClick(TObject *Sender)
 void __fastcall TMainForm::SaveCenterPointClick(TObject *Sender)
 {
 // Set new center coord of Triange
-	ShapeTriangle.setCenter(StrToFloat(xCoordCenter->Text),StrToFloat(yCoordCenter->Text));
+	ShapeTriangle.setCenter(StrToFloat(xCoordCenter->Text), StrToFloat(yCoordCenter->Text));
 // Clear PaintBox
 	TRect r;
 	r.Left = 0;
 	r.right = 1000;
 	r.Bottom = 1000;
 	r.Top = 0;
-	PaintBox->Canvas->Brush->Color=clWhite;
+	PaintBox->Canvas->Brush->Color = clWhite;
 	PaintBox->Canvas->FillRect(r);
 // Redrawing triangle
-	PaintBox->Canvas->MoveTo(ShapeTriangle.getxCoordA(),ShapeTriangle.getyCoordA());
-	PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordB(),ShapeTriangle.getyCoordB());
-	PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordC(),ShapeTriangle.getyCoordC());
-	PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordA(),ShapeTriangle.getyCoordA());
+	PaintBox->Canvas->MoveTo(ShapeTriangle.getxCoordA(), ShapeTriangle.getyCoordA());
+	PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordB(), ShapeTriangle.getyCoordB());
+	PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordC(), ShapeTriangle.getyCoordC());
+	PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordA(), ShapeTriangle.getyCoordA());
 // Drawing center of triangle
-	PaintBox->Canvas->Ellipse(ShapeTriangle.xCenter()-2,ShapeTriangle.yCenter()-2,ShapeTriangle.xCenter()+2,ShapeTriangle.yCenter()+2);
+	PaintBox->Canvas->Ellipse(ShapeTriangle.xCenter() - 2, ShapeTriangle.yCenter() - 2, ShapeTriangle.xCenter() + 2, ShapeTriangle.yCenter() + 2);
 // Set info
 	LabelInfoText->Caption = "Square: " + FloatToStr(ShapeTriangle.Square()) + "\n" + "Perimeter: " + FloatToStr(ShapeTriangle.Perimeter());
 }
@@ -92,11 +92,11 @@ void __fastcall TMainForm::TimerTopTimer(TObject *Sender)
 {
 // Clear PaintBox
 	TRect r;
-	r.Left=0;
-	r.right=1000;
-	r.Bottom=1000;
-	r.Top=0;
-	PaintBox->Canvas->Brush->Color=clWhite;
+	r.Left = 0;
+	r.right = 1000;
+	r.Bottom = 1000;
+	r.Top = 0;
+	PaintBox->Canvas->Brush->Color = clWhite;
 	PaintBox->Canvas->FillRect(r);
 
 	switch (TimerTop->Tag) {
@@ -105,53 +105,53 @@ void __fastcall TMainForm::TimerTopTimer(TObject *Sender)
 		// ================
 		case 1:
 		// Set new coords
-			ShapeTriangle.setPointA(ShapeTriangle.getxCoordA(),ShapeTriangle.getyCoordA()-1);
+			ShapeTriangle.setPointA(ShapeTriangle.getxCoordA(), ShapeTriangle.getyCoordA() - 1);
 			xCoordA->Text = FloatToStr(ShapeTriangle.getxCoordA());
 			yCoordA->Text = FloatToStr(ShapeTriangle.getyCoordA());
-			ShapeTriangle.setPointB(ShapeTriangle.getxCoordB(),ShapeTriangle.getyCoordB()-1);
+			ShapeTriangle.setPointB(ShapeTriangle.getxCoordB(), ShapeTriangle.getyCoordB() - 1);
 			xCoordB->Text = FloatToStr(ShapeTriangle.getxCoordB());
 			yCoordB->Text = FloatToStr(ShapeTriangle.getyCoordB());
-			ShapeTriangle.setPointC(ShapeTriangle.getxCoordC(),ShapeTriangle.getyCoordC()-1);
+			ShapeTriangle.setPointC(ShapeTriangle.getxCoordC(), ShapeTriangle.getyCoordC() - 1);
 			xCoordC->Text = FloatToStr(ShapeTriangle.getxCoordC());
 			yCoordC->Text = FloatToStr(ShapeTriangle.getyCoordC());
 			xCoordCenter->Text = FloatToStr(ShapeTriangle.xCenter());
 			yCoordCenter->Text = FloatToStr(ShapeTriangle.yCenter());
 		// Redrawing triangle
-			PaintBox->Canvas->MoveTo(ShapeTriangle.getxCoordA(),ShapeTriangle.getyCoordA());
-			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordB(),ShapeTriangle.getyCoordB());
-			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordC(),ShapeTriangle.getyCoordC());
-			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordA(),ShapeTriangle.getyCoordA());
+			PaintBox->Canvas->MoveTo(ShapeTriangle.getxCoordA(), ShapeTriangle.getyCoordA());
+			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordB(), ShapeTriangle.getyCoordB());
+			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordC(), ShapeTriangle.getyCoordC());
+			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordA(), ShapeTriangle.getyCoordA());
 		// Drawing center of triangle
-			PaintBox->Canvas->Ellipse(ShapeTriangle.xCenter()-2,ShapeTriangle.yCenter()-2,ShapeTriangle.xCenter()+2,ShapeTriangle.yCenter()+2);
+			PaintBox->Canvas->Ellipse(ShapeTriangle.xCenter() - 2, ShapeTriangle.yCenter() - 2, ShapeTriangle.xCenter() + 2, ShapeTriangle.yCenter() + 2);
 		break;
 		// ==============
 		// === Circle ===
 		// ==============
 		case 2:
 		// Set new coords
-			ShapeCircle.setCenter(ShapeCircle.getxCenter(),ShapeCircle.getyCenter()-1);
+			ShapeCircle.setCenter(ShapeCircle.getxCenter(), ShapeCircle.getyCenter() - 1);
 			yCoordCenterCircle->Text = FloatToStr(ShapeCircle.getyCenter());
 		// Redrawing circle
-			PaintBox->Canvas->Ellipse(ShapeCircle.xLeftTop(),ShapeCircle.yLeftTop(),ShapeCircle.xRightBottom(),ShapeCircle.yRightBottom());
+			PaintBox->Canvas->Ellipse(ShapeCircle.xLeftTop(), ShapeCircle.yLeftTop(), ShapeCircle.xRightBottom(), ShapeCircle.yRightBottom());
 		// Redrawing center of circle
-			PaintBox->Canvas->Ellipse(ShapeCircle.getxCenter()-2, ShapeCircle.getyCenter()-2, ShapeCircle.getxCenter()+2, ShapeCircle.getyCenter()+2);
+			PaintBox->Canvas->Ellipse(ShapeCircle.getxCenter() - 2, ShapeCircle.getyCenter() - 2, ShapeCircle.getxCenter() + 2, ShapeCircle.getyCenter() + 2);
 		break;
 		// ===============
 		// === Polygon ===
 		// ===============
 		case 3:
 		// Set new coords
-			ShapePolygon.setCenter(ShapePolygon.xCenterCoord(),ShapePolygon.yCenterCoord()-1);
+			ShapePolygon.setCenter(ShapePolygon.xCenterCoord(), ShapePolygon.yCenterCoord() - 1);
 		// Drawing Polygon
-			PaintBox->Canvas->MoveTo(ShapePolygon.getxCoordA(),ShapePolygon.getyCoordA());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordB(),ShapePolygon.getyCoordB());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordC(),ShapePolygon.getyCoordC());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordD(),ShapePolygon.getyCoordD());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordE(),ShapePolygon.getyCoordE());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordA(),ShapePolygon.getyCoordA());
+			PaintBox->Canvas->MoveTo(ShapePolygon.getxCoordA(), ShapePolygon.getyCoordA());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordB(), ShapePolygon.getyCoordB());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordC(), ShapePolygon.getyCoordC());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordD(), ShapePolygon.getyCoordD());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordE(), ShapePolygon.getyCoordE());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordA(), ShapePolygon.getyCoordA());
 		// Drawing center of polygon
-			PaintBox->Canvas->MoveTo(ShapePolygon.xCenterCoord(),ShapePolygon.yCenterCoord());
-			PaintBox->Canvas->Ellipse(ShapePolygon.xCenterCoord()-2,ShapePolygon.yCenterCoord()-2,ShapePolygon.xCenterCoord()+2,ShapePolygon.yCenterCoord()+2);
+			PaintBox->Canvas->MoveTo(ShapePolygon.xCenterCoord(), ShapePolygon.yCenterCoord());
+			PaintBox->Canvas->Ellipse(ShapePolygon.xCenterCoord() - 2,ShapePolygon.yCenterCoord() - 2,ShapePolygon.xCenterCoord() + 2,ShapePolygon.yCenterCoord() + 2);
 		// Set "edit" of points
 			xCoordPA->Text = FloatToStr(ShapePolygon.getxCoordA());
 			xCoordPB->Text = FloatToStr(ShapePolygon.getxCoordB());
@@ -178,11 +178,11 @@ void __fastcall TMainForm::TimerBottomTimer(TObject *Sender)
 {
 // Clear PaintBox
 	TRect r;
-	r.Left=0;
-	r.right=1000;
-	r.Bottom=1000;
-	r.Top=0;
-	PaintBox->Canvas->Brush->Color=clWhite;
+	r.Left = 0;
+	r.right = 1000;
+	r.Bottom = 1000;
+	r.Top = 0;
+	PaintBox->Canvas->Brush->Color = clWhite;
 	PaintBox->Canvas->FillRect(r);
 
 	switch (TimerBottom->Tag) {
@@ -191,53 +191,53 @@ void __fastcall TMainForm::TimerBottomTimer(TObject *Sender)
 		// ================
 		case 1:
 		// Set new coords
-			ShapeTriangle.setPointA(ShapeTriangle.getxCoordA(),ShapeTriangle.getyCoordA()+1);
+			ShapeTriangle.setPointA(ShapeTriangle.getxCoordA(), ShapeTriangle.getyCoordA() + 1);
 			xCoordA->Text = FloatToStr(ShapeTriangle.getxCoordA());
 			yCoordA->Text = FloatToStr(ShapeTriangle.getyCoordA());
-			ShapeTriangle.setPointB(ShapeTriangle.getxCoordB(),ShapeTriangle.getyCoordB()+1);
+			ShapeTriangle.setPointB(ShapeTriangle.getxCoordB(), ShapeTriangle.getyCoordB() + 1);
 			xCoordB->Text = FloatToStr(ShapeTriangle.getxCoordB());
 			yCoordB->Text = FloatToStr(ShapeTriangle.getyCoordB());
-			ShapeTriangle.setPointC(ShapeTriangle.getxCoordC(),ShapeTriangle.getyCoordC()+1);
+			ShapeTriangle.setPointC(ShapeTriangle.getxCoordC(), ShapeTriangle.getyCoordC() + 1);
 			xCoordC->Text = FloatToStr(ShapeTriangle.getxCoordC());
 			yCoordC->Text = FloatToStr(ShapeTriangle.getyCoordC());
 			xCoordCenter->Text = FloatToStr(ShapeTriangle.xCenter());
 			yCoordCenter->Text = FloatToStr(ShapeTriangle.yCenter());
 		// Redrawing triangle
-			PaintBox->Canvas->MoveTo(ShapeTriangle.getxCoordA(),ShapeTriangle.getyCoordA());
-			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordB(),ShapeTriangle.getyCoordB());
-			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordC(),ShapeTriangle.getyCoordC());
-			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordA(),ShapeTriangle.getyCoordA());
+			PaintBox->Canvas->MoveTo(ShapeTriangle.getxCoordA(), ShapeTriangle.getyCoordA());
+			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordB(), ShapeTriangle.getyCoordB());
+			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordC(), ShapeTriangle.getyCoordC());
+			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordA(), ShapeTriangle.getyCoordA());
 		// Drawing center of triangle
-			PaintBox->Canvas->Ellipse(ShapeTriangle.xCenter()-2,ShapeTriangle.yCenter()-2,ShapeTriangle.xCenter()+2,ShapeTriangle.yCenter()+2);
+			PaintBox->Canvas->Ellipse(ShapeTriangle.xCenter() - 2, ShapeTriangle.yCenter() - 2, ShapeTriangle.xCenter() + 2, ShapeTriangle.yCenter() + 2);
 		break;
 		// ==============
 		// === Circle ===
 		// ==============
 		case 2:
 		// Set new coords
-			ShapeCircle.setCenter(ShapeCircle.getxCenter(),ShapeCircle.getyCenter()+1);
+			ShapeCircle.setCenter(ShapeCircle.getxCenter(), ShapeCircle.getyCenter() + 1);
 			yCoordCenterCircle->Text = FloatToStr(ShapeCircle.getyCenter());
 		// Redrawing circle
-			PaintBox->Canvas->Ellipse(ShapeCircle.xLeftTop(),ShapeCircle.yLeftTop(),ShapeCircle.xRightBottom(),ShapeCircle.yRightBottom());
+			PaintBox->Canvas->Ellipse(ShapeCircle.xLeftTop(), ShapeCircle.yLeftTop(), ShapeCircle.xRightBottom(), ShapeCircle.yRightBottom());
 		// Redrawing center of circle
-			PaintBox->Canvas->Ellipse(ShapeCircle.getxCenter()-2, ShapeCircle.getyCenter()-2, ShapeCircle.getxCenter()+2, ShapeCircle.getyCenter()+2);
+			PaintBox->Canvas->Ellipse(ShapeCircle.getxCenter() - 2, ShapeCircle.getyCenter() - 2, ShapeCircle.getxCenter() + 2, ShapeCircle.getyCenter() + 2);
 		break;
 		// ===============
 		// === Polygon ===
 		// ===============
 		case 3:
         // Set new coords
-			ShapePolygon.setCenter(ShapePolygon.xCenterCoord(),ShapePolygon.yCenterCoord()+1);
+			ShapePolygon.setCenter(ShapePolygon.xCenterCoord(), ShapePolygon.yCenterCoord() + 1);
 		// Drawing Polygon
-			PaintBox->Canvas->MoveTo(ShapePolygon.getxCoordA(),ShapePolygon.getyCoordA());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordB(),ShapePolygon.getyCoordB());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordC(),ShapePolygon.getyCoordC());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordD(),ShapePolygon.getyCoordD());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordE(),ShapePolygon.getyCoordE());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordA(),ShapePolygon.getyCoordA());
+			PaintBox->Canvas->MoveTo(ShapePolygon.getxCoordA(), ShapePolygon.getyCoordA());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordB(), ShapePolygon.getyCoordB());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordC(), ShapePolygon.getyCoordC());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordD(), ShapePolygon.getyCoordD());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordE(), ShapePolygon.getyCoordE());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordA(), ShapePolygon.getyCoordA());
 		// Drawing center of polygon
-			PaintBox->Canvas->MoveTo(ShapePolygon.xCenterCoord(),ShapePolygon.yCenterCoord());
-			PaintBox->Canvas->Ellipse(ShapePolygon.xCenterCoord()-2,ShapePolygon.yCenterCoord()-2,ShapePolygon.xCenterCoord()+2,ShapePolygon.yCenterCoord()+2);
+			PaintBox->Canvas->MoveTo(ShapePolygon.xCenterCoord(), ShapePolygon.yCenterCoord());
+			PaintBox->Canvas->Ellipse(ShapePolygon.xCenterCoord() - 2, ShapePolygon.yCenterCoord() - 2, ShapePolygon.xCenterCoord() + 2, ShapePolygon.yCenterCoord() + 2);
 		// Set "edit" of points
 			xCoordPA->Text = FloatToStr(ShapePolygon.getxCoordA());
 			xCoordPB->Text = FloatToStr(ShapePolygon.getxCoordB());
@@ -265,11 +265,11 @@ void __fastcall TMainForm::TimerRightTimer(TObject *Sender)
 {
 	// Clear PaintBox
 	TRect r;
-	r.Left=0;
-	r.right=1000;
-	r.Bottom=1000;
-	r.Top=0;
-	PaintBox->Canvas->Brush->Color=clWhite;
+	r.Left = 0;
+	r.right = 1000;
+	r.Bottom = 1000;
+	r.Top = 0;
+	PaintBox->Canvas->Brush->Color = clWhite;
 	PaintBox->Canvas->FillRect(r);
 
 	switch (TimerRight->Tag) {
@@ -278,52 +278,53 @@ void __fastcall TMainForm::TimerRightTimer(TObject *Sender)
 		// ================
 		case 1:
 		// Set new coords
-			ShapeTriangle.setPointA(ShapeTriangle.getxCoordA()+1,ShapeTriangle.getyCoordA());
+			ShapeTriangle.setPointA(ShapeTriangle.getxCoordA() + 1, ShapeTriangle.getyCoordA());
 			xCoordA->Text = FloatToStr(ShapeTriangle.getxCoordA());
 			yCoordA->Text = FloatToStr(ShapeTriangle.getyCoordA());
-			ShapeTriangle.setPointB(ShapeTriangle.getxCoordB()+1,ShapeTriangle.getyCoordB());			xCoordB->Text = FloatToStr(ShapeTriangle.getxCoordB());
+			ShapeTriangle.setPointB(ShapeTriangle.getxCoordB() + 1, ShapeTriangle.getyCoordB());			
+			xCoordB->Text = FloatToStr(ShapeTriangle.getxCoordB());
 			yCoordB->Text = FloatToStr(ShapeTriangle.getyCoordB());
-			ShapeTriangle.setPointC(ShapeTriangle.getxCoordC()+1,ShapeTriangle.getyCoordC());
+			ShapeTriangle.setPointC(ShapeTriangle.getxCoordC() + 1, ShapeTriangle.getyCoordC());
 			xCoordC->Text = FloatToStr(ShapeTriangle.getxCoordC());
 			yCoordC->Text = FloatToStr(ShapeTriangle.getyCoordC());
 			xCoordCenter->Text = FloatToStr(ShapeTriangle.xCenter());
 			yCoordCenter->Text = FloatToStr(ShapeTriangle.yCenter());
 		// Redrawing triangle
-			PaintBox->Canvas->MoveTo(ShapeTriangle.getxCoordA(),ShapeTriangle.getyCoordA());
-			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordB(),ShapeTriangle.getyCoordB());
-			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordC(),ShapeTriangle.getyCoordC());
-			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordA(),ShapeTriangle.getyCoordA());
+			PaintBox->Canvas->MoveTo(ShapeTriangle.getxCoordA(), ShapeTriangle.getyCoordA());
+			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordB(), ShapeTriangle.getyCoordB());
+			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordC(), ShapeTriangle.getyCoordC());
+			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordA(), ShapeTriangle.getyCoordA());
 		// Drawing center of triangle
-			PaintBox->Canvas->Ellipse(ShapeTriangle.xCenter()-2,ShapeTriangle.yCenter()-2,ShapeTriangle.xCenter()+2,ShapeTriangle.yCenter()+2);
+			PaintBox->Canvas->Ellipse(ShapeTriangle.xCenter() - 2, ShapeTriangle.yCenter() - 2, ShapeTriangle.xCenter() + 2, ShapeTriangle.yCenter() + 2);
 		break;
 		// ==============
 		// === Circle ===
 		// ==============
 		case 2:
         // Set new coords
-			ShapeCircle.setCenter(ShapeCircle.getxCenter()+1,ShapeCircle.getyCenter());
+			ShapeCircle.setCenter(ShapeCircle.getxCenter() + 1, ShapeCircle.getyCenter());
 			xCoordCenterCircle->Text = FloatToStr(ShapeCircle.getxCenter());
 		// Redrawing circle
-			PaintBox->Canvas->Ellipse(ShapeCircle.xLeftTop(),ShapeCircle.yLeftTop(),ShapeCircle.xRightBottom(),ShapeCircle.yRightBottom());
+			PaintBox->Canvas->Ellipse(ShapeCircle.xLeftTop(), ShapeCircle.yLeftTop(), ShapeCircle.xRightBottom(), ShapeCircle.yRightBottom());
 		// Redrawing center of circle
-			PaintBox->Canvas->Ellipse(ShapeCircle.getxCenter()-2, ShapeCircle.getyCenter()-2, ShapeCircle.getxCenter()+2, ShapeCircle.getyCenter()+2);
+			PaintBox->Canvas->Ellipse(ShapeCircle.getxCenter() - 2, ShapeCircle.getyCenter() - 2, ShapeCircle.getxCenter() + 2, ShapeCircle.getyCenter() + 2);
 		break;
 		// ===============
 		// === Polygon ===
 		// ===============
 		case 3:
 		// Set new coords
-			ShapePolygon.setCenter(ShapePolygon.xCenterCoord()+1,ShapePolygon.yCenterCoord());
+			ShapePolygon.setCenter(ShapePolygon.xCenterCoord() + 1, ShapePolygon.yCenterCoord());
 		// Drawing Polygon
-			PaintBox->Canvas->MoveTo(ShapePolygon.getxCoordA(),ShapePolygon.getyCoordA());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordB(),ShapePolygon.getyCoordB());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordC(),ShapePolygon.getyCoordC());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordD(),ShapePolygon.getyCoordD());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordE(),ShapePolygon.getyCoordE());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordA(),ShapePolygon.getyCoordA());
+			PaintBox->Canvas->MoveTo(ShapePolygon.getxCoordA(), ShapePolygon.getyCoordA());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordB(), ShapePolygon.getyCoordB());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordC(), ShapePolygon.getyCoordC());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordD(), ShapePolygon.getyCoordD());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordE(), ShapePolygon.getyCoordE());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordA(), ShapePolygon.getyCoordA());
 		// Drawing center of polygon
-			PaintBox->Canvas->MoveTo(ShapePolygon.xCenterCoord(),ShapePolygon.yCenterCoord());
-			PaintBox->Canvas->Ellipse(ShapePolygon.xCenterCoord()-2,ShapePolygon.yCenterCoord()-2,ShapePolygon.xCenterCoord()+2,ShapePolygon.yCenterCoord()+2);
+			PaintBox->Canvas->MoveTo(ShapePolygon.xCenterCoord(), ShapePolygon.yCenterCoord());
+			PaintBox->Canvas->Ellipse(ShapePolygon.xCenterCoord() - 2, ShapePolygon.yCenterCoord() - 2, ShapePolygon.xCenterCoord() + 2, ShapePolygon.yCenterCoord() + 2);
 		// Set "edit" of points
 			xCoordPA->Text = FloatToStr(ShapePolygon.getxCoordA());
 			xCoordPB->Text = FloatToStr(ShapePolygon.getxCoordB());
@@ -350,11 +351,11 @@ void __fastcall TMainForm::TimerLeftTimer(TObject *Sender)
 {
 	// Clear PaintBox
 	TRect r;
-	r.Left=0;
-	r.right=1000;
-	r.Bottom=1000;
-	r.Top=0;
-	PaintBox->Canvas->Brush->Color=clWhite;
+	r.Left = 0;
+	r.right = 1000;
+	r.Bottom = 1000;
+	r.Top = 0;
+	PaintBox->Canvas->Brush->Color = clWhite;
 	PaintBox->Canvas->FillRect(r);
 
 	switch (TimerLeft->Tag) {
@@ -363,10 +364,10 @@ void __fastcall TMainForm::TimerLeftTimer(TObject *Sender)
 		// ================
 		case 1:
 		// Set new coords
-			ShapeTriangle.setPointA(ShapeTriangle.getxCoordA()-1,ShapeTriangle.getyCoordA());
+			ShapeTriangle.setPointA(ShapeTriangle.getxCoordA() - 1,ShapeTriangle.getyCoordA());
 			xCoordA->Text = FloatToStr(ShapeTriangle.getxCoordA());
 			yCoordA->Text = FloatToStr(ShapeTriangle.getyCoordA());
-			ShapeTriangle.setPointB(ShapeTriangle.getxCoordB()-1,ShapeTriangle.getyCoordB());
+			ShapeTriangle.setPointB(ShapeTriangle.getxCoordB() - 1,ShapeTriangle.getyCoordB());
 			xCoordB->Text = FloatToStr(ShapeTriangle.getxCoordB());
 			yCoordB->Text = FloatToStr(ShapeTriangle.getyCoordB());
 			ShapeTriangle.setPointC(ShapeTriangle.getxCoordC()-1,ShapeTriangle.getyCoordC());
@@ -380,26 +381,26 @@ void __fastcall TMainForm::TimerLeftTimer(TObject *Sender)
 			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordC(),ShapeTriangle.getyCoordC());
 			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordA(),ShapeTriangle.getyCoordA());
 		// Drawing center of triangle
-			PaintBox->Canvas->Ellipse(ShapeTriangle.xCenter()-2,ShapeTriangle.yCenter()-2,ShapeTriangle.xCenter()+2,ShapeTriangle.yCenter()+2);
+			PaintBox->Canvas->Ellipse(ShapeTriangle.xCenter() - 2,ShapeTriangle.yCenter() - 2,ShapeTriangle.xCenter() + 2,ShapeTriangle.yCenter() + 2);
 		break;
 		// ==============
 		// === Circle ===
 		// ==============
 		case 2:
         // Set new coords
-			ShapeCircle.setCenter(ShapeCircle.getxCenter()-1,ShapeCircle.getyCenter());
+			ShapeCircle.setCenter(ShapeCircle.getxCenter() - 1,ShapeCircle.getyCenter());
             xCoordCenterCircle->Text = FloatToStr(ShapeCircle.getxCenter());
 		// Redrawing circle
 			PaintBox->Canvas->Ellipse(ShapeCircle.xLeftTop(),ShapeCircle.yLeftTop(),ShapeCircle.xRightBottom(),ShapeCircle.yRightBottom());
 		// Redrawing center of circle
-			PaintBox->Canvas->Ellipse(ShapeCircle.getxCenter()-2, ShapeCircle.getyCenter()-2, ShapeCircle.getxCenter()+2, ShapeCircle.getyCenter()+2);
+			PaintBox->Canvas->Ellipse(ShapeCircle.getxCenter() - 2, ShapeCircle.getyCenter() - 2, ShapeCircle.getxCenter() + 2, ShapeCircle.getyCenter() + 2);
 		break;
 		// ===============
 		// === Polygon ===
 		// ===============
 		case 3:
 		// Set new coords
-			ShapePolygon.setCenter(ShapePolygon.xCenterCoord()-1,ShapePolygon.yCenterCoord());
+			ShapePolygon.setCenter(ShapePolygon.xCenterCoord() - 1,ShapePolygon.yCenterCoord());
 		// Drawing Polygon
 			PaintBox->Canvas->MoveTo(ShapePolygon.getxCoordA(),ShapePolygon.getyCoordA());
 			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordB(),ShapePolygon.getyCoordB());
@@ -409,7 +410,7 @@ void __fastcall TMainForm::TimerLeftTimer(TObject *Sender)
 			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordA(),ShapePolygon.getyCoordA());
 		// Drawing center of polygon
 			PaintBox->Canvas->MoveTo(ShapePolygon.xCenterCoord(),ShapePolygon.yCenterCoord());
-			PaintBox->Canvas->Ellipse(ShapePolygon.xCenterCoord()-2,ShapePolygon.yCenterCoord()-2,ShapePolygon.xCenterCoord()+2,ShapePolygon.yCenterCoord()+2);
+			PaintBox->Canvas->Ellipse(ShapePolygon.xCenterCoord() - 2,ShapePolygon.yCenterCoord() - 2,ShapePolygon.xCenterCoord() + 2,ShapePolygon.yCenterCoord() + 2);
 		// Set "edit" of points
 			xCoordPA->Text = FloatToStr(ShapePolygon.getxCoordA());
 			xCoordPB->Text = FloatToStr(ShapePolygon.getxCoordB());
@@ -432,24 +433,24 @@ void __fastcall TMainForm::TimerLeftTimer(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 double xRotateCoord(double x,double y, double m, double n, int i) {
-	double a = i*M_PI/180.0;
-	return x*cos(a) - sin(a)*y - m*(cos(a) - 1) + n*sin(a);
+	double a = i * M_PI / 180.0;
+	return x * cos(a) - sin(a) * y - m * (cos(a) - 1) + n * sin(a);
 }
 
 double yRotateCoord(double x,double y, double m, double n, int i) {
-	double a = i*M_PI/180.0;
-	return x*sin(a) + cos(a)*y - n*(cos(a) - 1) - m*sin(a);
+	double a = i * M_PI / 180.0;
+	return x * sin(a) + cos(a) * y - n * (cos(a) - 1) - m * sin(a);
 }
 
 void __fastcall TMainForm::TimerRotateRightTimer(TObject *Sender)
 {
 	// Clear PaintBox
 	TRect r;
-	r.Left=0;
-	r.right=1000;
-	r.Bottom=1000;
-	r.Top=0;
-	PaintBox->Canvas->Brush->Color=clWhite;
+	r.Left = 0;
+	r.right = 1000;
+	r.Bottom = 1000;
+	r.Top = 0;
+	PaintBox->Canvas->Brush->Color = clWhite;
 	PaintBox->Canvas->FillRect(r);
 	// define x,y,m,n
 	double x = 0, y = 0, m = 0, n = 0;
@@ -463,31 +464,31 @@ void __fastcall TMainForm::TimerRotateRightTimer(TObject *Sender)
 			y = ShapeTriangle.getyCoordA();
 			m = ShapeTriangle.xCenter();
 			n = ShapeTriangle.yCenter();
-			ShapeTriangle.setPointA(xRotateCoord(x,y,m,n,1),yRotateCoord(x,y,m,n,1));
+			ShapeTriangle.setPointA(xRotateCoord(x, y, m, n, 1), yRotateCoord(x, y, m, n, 1));
 			xCoordA->Text = FloatToStr(x);
 			yCoordA->Text = FloatToStr(y);
 
 			x = ShapeTriangle.getxCoordB();
 			y = ShapeTriangle.getyCoordB();
-			ShapeTriangle.setPointB(xRotateCoord(x,y,m,n,1),yRotateCoord(x,y,m,n,1));
+			ShapeTriangle.setPointB(xRotateCoord(x, y, m, n, 1), yRotateCoord(x, y, m, n, 1));
 			xCoordB->Text = FloatToStr(x);
 			yCoordB->Text = FloatToStr(y);
 
 			x = ShapeTriangle.getxCoordC();
 			y = ShapeTriangle.getyCoordC();
-			ShapeTriangle.setPointC(xRotateCoord(x,y,m,n,1),yRotateCoord(x,y,m,n,1));
+			ShapeTriangle.setPointC(xRotateCoord(x, y, m, n, 1), yRotateCoord(x, y, m, n, 1));
 			xCoordC->Text = FloatToStr(x);
 			yCoordC->Text = FloatToStr(y);
 
 			xCoordCenter->Text = FloatToStr(m);
 			yCoordCenter->Text = FloatToStr(n);
 		// Redrawing triangle
-			PaintBox->Canvas->MoveTo(ShapeTriangle.getxCoordA(),ShapeTriangle.getyCoordA());
-			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordB(),ShapeTriangle.getyCoordB());
-			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordC(),ShapeTriangle.getyCoordC());
-			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordA(),ShapeTriangle.getyCoordA());
+			PaintBox->Canvas->MoveTo(ShapeTriangle.getxCoordA(), ShapeTriangle.getyCoordA());
+			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordB(), ShapeTriangle.getyCoordB());
+			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordC(), ShapeTriangle.getyCoordC());
+			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordA(), ShapeTriangle.getyCoordA());
 		// Drawing center of triangle
-			PaintBox->Canvas->Ellipse(ShapeTriangle.xCenter()-2,ShapeTriangle.yCenter()-2,ShapeTriangle.xCenter()+2,ShapeTriangle.yCenter()+2);
+			PaintBox->Canvas->Ellipse(ShapeTriangle.xCenter() - 2, ShapeTriangle.yCenter() - 2, ShapeTriangle.xCenter() + 2, ShapeTriangle.yCenter() + 2);
 		break;
 		// ==============
 		// === Circle ===
@@ -504,43 +505,43 @@ void __fastcall TMainForm::TimerRotateRightTimer(TObject *Sender)
 			y = ShapePolygon.getyCoordA();
 			m = ShapePolygon.xCenterCoord();
 			n = ShapePolygon.yCenterCoord();
-			ShapePolygon.setPointA(xRotateCoord(x,y,m,n,1),yRotateCoord(x,y,m,n,1));
+			ShapePolygon.setPointA(xRotateCoord(x, y, m, n, 1), yRotateCoord(x,y,m,n,1));
 			xCoordPA->Text = FloatToStr(x);
 			yCoordPA->Text = FloatToStr(y);
 
 			x = ShapePolygon.getxCoordB();
 			y = ShapePolygon.getyCoordB();
-			ShapePolygon.setPointB(xRotateCoord(x,y,m,n,1),yRotateCoord(x,y,m,n,1));
+			ShapePolygon.setPointB(xRotateCoord(x, y, m, n, 1), yRotateCoord(x, y, m, n, 1));
 			xCoordPB->Text = FloatToStr(x);
 			yCoordPB->Text = FloatToStr(y);
 
 			x = ShapePolygon.getxCoordC();
 			y = ShapePolygon.getyCoordC();
-			ShapePolygon.setPointC(xRotateCoord(x,y,m,n,1),yRotateCoord(x,y,m,n,1));
+			ShapePolygon.setPointC(xRotateCoord(x, y, m, n, 1), yRotateCoord(x, y, m, n, 1));
 			xCoordPC->Text = FloatToStr(x);
 			yCoordPC->Text = FloatToStr(y);
 
 			x = ShapePolygon.getxCoordD();
 			y = ShapePolygon.getyCoordD();
-			ShapePolygon.setPointD(xRotateCoord(x,y,m,n,1),yRotateCoord(x,y,m,n,1));
+			ShapePolygon.setPointD(xRotateCoord(x, y, m, n, 1), yRotateCoord(x, y,m,n,1));
 			xCoordPD->Text = FloatToStr(x);
 			yCoordPD->Text = FloatToStr(y);
 
 			x = ShapePolygon.getxCoordE();
 			y = ShapePolygon.getyCoordE();
-			ShapePolygon.setPointE(xRotateCoord(x,y,m,n,1),yRotateCoord(x,y,m,n,1));
+			ShapePolygon.setPointE(xRotateCoord(x,y,m,n,1), yRotateCoord(x,y,m,n,1));
 			xCoordPE->Text = FloatToStr(x);
 			yCoordPE->Text = FloatToStr(y);
 		// Drawing Polygon
-			PaintBox->Canvas->MoveTo(ShapePolygon.getxCoordA(),ShapePolygon.getyCoordA());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordB(),ShapePolygon.getyCoordB());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordC(),ShapePolygon.getyCoordC());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordD(),ShapePolygon.getyCoordD());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordE(),ShapePolygon.getyCoordE());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordA(),ShapePolygon.getyCoordA());
+			PaintBox->Canvas->MoveTo(ShapePolygon.getxCoordA(), ShapePolygon.getyCoordA());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordB(), ShapePolygon.getyCoordB());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordC(), ShapePolygon.getyCoordC());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordD(), ShapePolygon.getyCoordD());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordE(), ShapePolygon.getyCoordE());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordA(), ShapePolygon.getyCoordA());
 		// Drawing center of polygon
-			PaintBox->Canvas->MoveTo(ShapePolygon.xCenterCoord(),ShapePolygon.yCenterCoord());
-			PaintBox->Canvas->Ellipse(ShapePolygon.xCenterCoord()-2,ShapePolygon.yCenterCoord()-2,ShapePolygon.xCenterCoord()+2,ShapePolygon.yCenterCoord()+2);
+			PaintBox->Canvas->MoveTo(ShapePolygon.xCenterCoord(), ShapePolygon.yCenterCoord());
+			PaintBox->Canvas->Ellipse(ShapePolygon.xCenterCoord() - 2, ShapePolygon.yCenterCoord() - 2, ShapePolygon.xCenterCoord() + 2, ShapePolygon.yCenterCoord() + 2);
 		break;
 		default:
 		// EMPTY
@@ -553,11 +554,11 @@ void __fastcall TMainForm::TimerRotateLeftTimer(TObject *Sender)
 {
 // Clear PaintBox
 	TRect r;
-	r.Left=0;
-	r.right=1000;
-	r.Bottom=1000;
-	r.Top=0;
-	PaintBox->Canvas->Brush->Color=clWhite;
+	r.Left = 0;
+	r.right = 1000;
+	r.Bottom = 1000;
+	r.Top = 0;
+	PaintBox->Canvas->Brush->Color = clWhite;
 	PaintBox->Canvas->FillRect(r);
 // define x,y,m,n
 	double x = 0, y = 0, m = 0, n = 0;
@@ -571,31 +572,31 @@ void __fastcall TMainForm::TimerRotateLeftTimer(TObject *Sender)
 			y = ShapeTriangle.getyCoordA();
 			m = ShapeTriangle.xCenter();
 			n = ShapeTriangle.yCenter();
-			ShapeTriangle.setPointA(xRotateCoord(x,y,m,n,-1),yRotateCoord(x,y,m,n,-1));
+			ShapeTriangle.setPointA(xRotateCoord(x, y, m, n, -1), yRotateCoord(x, y, m, n, -1));
 			xCoordA->Text = FloatToStr(x);
 			yCoordA->Text = FloatToStr(y);
 
 			x = ShapeTriangle.getxCoordB();
 			y = ShapeTriangle.getyCoordB();
-			ShapeTriangle.setPointB(xRotateCoord(x,y,m,n,-1),yRotateCoord(x,y,m,n,-1));
+			ShapeTriangle.setPointB(xRotateCoord(x, y, m, n, -1), yRotateCoord(x, y, m, n, -1));
 			xCoordB->Text = FloatToStr(x);
 			yCoordB->Text = FloatToStr(y);
 
 			x = ShapeTriangle.getxCoordC();
 			y = ShapeTriangle.getyCoordC();
-			ShapeTriangle.setPointC(xRotateCoord(x,y,m,n,-1),yRotateCoord(x,y,m,n,-1));
+			ShapeTriangle.setPointC(xRotateCoord(x, y, m, n, -1), yRotateCoord(x, y, m, n, -1));
 			xCoordC->Text = FloatToStr(x);
 			yCoordC->Text = FloatToStr(y);
 
 			xCoordCenter->Text = FloatToStr(m);
 			yCoordCenter->Text = FloatToStr(n);
 		// Redrawing triangle
-			PaintBox->Canvas->MoveTo(ShapeTriangle.getxCoordA(),ShapeTriangle.getyCoordA());
-			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordB(),ShapeTriangle.getyCoordB());
-			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordC(),ShapeTriangle.getyCoordC());
-			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordA(),ShapeTriangle.getyCoordA());
+			PaintBox->Canvas->MoveTo(ShapeTriangle.getxCoordA(), ShapeTriangle.getyCoordA());
+			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordB(), ShapeTriangle.getyCoordB());
+			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordC(), ShapeTriangle.getyCoordC());
+			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordA(), ShapeTriangle.getyCoordA());
 		// Drawing center of triangle
-			PaintBox->Canvas->Ellipse(ShapeTriangle.xCenter()-2,ShapeTriangle.yCenter()-2,ShapeTriangle.xCenter()+2,ShapeTriangle.yCenter()+2);
+			PaintBox->Canvas->Ellipse(ShapeTriangle.xCenter() - 2, ShapeTriangle.yCenter() - 2, ShapeTriangle.xCenter() + 2, ShapeTriangle.yCenter() + 2);
 		break;
 		// ==============
 		// === Circle ===
@@ -612,43 +613,43 @@ void __fastcall TMainForm::TimerRotateLeftTimer(TObject *Sender)
 			y = ShapePolygon.getyCoordA();
 			m = ShapePolygon.xCenterCoord();
 			n = ShapePolygon.yCenterCoord();
-			ShapePolygon.setPointA(xRotateCoord(x,y,m,n,-1),yRotateCoord(x,y,m,n,-1));
+			ShapePolygon.setPointA(xRotateCoord(x, y, m, n, -1), yRotateCoord(x, y, m, n, -1));
 			xCoordPA->Text = FloatToStr(x);
 			yCoordPA->Text = FloatToStr(y);
 
 			x = ShapePolygon.getxCoordB();
 			y = ShapePolygon.getyCoordB();
-			ShapePolygon.setPointB(xRotateCoord(x,y,m,n,-1),yRotateCoord(x,y,m,n,-1));
+			ShapePolygon.setPointB(xRotateCoord(x, y, m, n, -1), yRotateCoord(x, y, m, n, -1));
 			xCoordPB->Text = FloatToStr(x);
 			yCoordPB->Text = FloatToStr(y);
 
 			x = ShapePolygon.getxCoordC();
 			y = ShapePolygon.getyCoordC();
-			ShapePolygon.setPointC(xRotateCoord(x,y,m,n,-1),yRotateCoord(x,y,m,n,-1));
+			ShapePolygon.setPointC(xRotateCoord(x, y, m, n, -1), yRotateCoord(x, y, m, n, -1));
 			xCoordPC->Text = FloatToStr(x);
 			yCoordPC->Text = FloatToStr(y);
 
 			x = ShapePolygon.getxCoordD();
 			y = ShapePolygon.getyCoordD();
-			ShapePolygon.setPointD(xRotateCoord(x,y,m,n,-1),yRotateCoord(x,y,m,n,-1));
+			ShapePolygon.setPointD(xRotateCoord(x, y, m, n, -1), yRotateCoord(x, y, m, n, -1));
 			xCoordPD->Text = FloatToStr(x);
 			yCoordPD->Text = FloatToStr(y);
 
 			x = ShapePolygon.getxCoordE();
 			y = ShapePolygon.getyCoordE();
-			ShapePolygon.setPointE(xRotateCoord(x,y,m,n,-1),yRotateCoord(x,y,m,n,-1));
+			ShapePolygon.setPointE(xRotateCoord(x, y, m, n, -1), yRotateCoord(x, y, m, n, -1));
 			xCoordPE->Text = FloatToStr(x);
 			yCoordPE->Text = FloatToStr(y);
 		// Drawing Polygon
-			PaintBox->Canvas->MoveTo(ShapePolygon.getxCoordA(),ShapePolygon.getyCoordA());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordB(),ShapePolygon.getyCoordB());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordC(),ShapePolygon.getyCoordC());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordD(),ShapePolygon.getyCoordD());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordE(),ShapePolygon.getyCoordE());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordA(),ShapePolygon.getyCoordA());
-		// Drawing center of polygon
-			PaintBox->Canvas->MoveTo(ShapePolygon.xCenterCoord(),ShapePolygon.yCenterCoord());
-			PaintBox->Canvas->Ellipse(ShapePolygon.xCenterCoord()-2,ShapePolygon.yCenterCoord()-2,ShapePolygon.xCenterCoord()+2,ShapePolygon.yCenterCoord()+2);
+			PaintBox->Canvas->MoveTo(ShapePolygon.getxCoordA(), ShapePolygon.getyCoordA());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordB(), ShapePolygon.getyCoordB());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordC(), ShapePolygon.getyCoordC());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordD(), ShapePolygon.getyCoordD());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordE(), ShapePolygon.getyCoordE());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordA(), ShapePolygon.getyCoordA());
+		// Drawing center of polygon 
+			PaintBox->Canvas->MoveTo(ShapePolygon.xCenterCoord(), ShapePolygon.yCenterCoord());
+			PaintBox->Canvas->Ellipse(ShapePolygon.xCenterCoord() - 2, ShapePolygon.yCenterCoord() - 2, ShapePolygon.xCenterCoord() + 2, ShapePolygon.yCenterCoord() + 2);
 		break;
 		default:
 		// EMPTY
@@ -833,14 +834,14 @@ void __fastcall TMainForm::saveRadiusClick(TObject *Sender)
 	r.right = 1000;
 	r.Bottom = 1000;
 	r.Top = 0;
-	PaintBox->Canvas->Brush->Color=clWhite;
+	PaintBox->Canvas->Brush->Color = clWhite;
 	PaintBox->Canvas->FillRect(r);
 //  Set the radius of circle
 	ShapeCircle.setRadius(StrToFloat(circleRadius->Text));
 // Drawing circle
-	PaintBox->Canvas->Ellipse(ShapeCircle.xLeftTop(),ShapeCircle.yLeftTop(),ShapeCircle.xRightBottom(),ShapeCircle.yRightBottom());
+	PaintBox->Canvas->Ellipse(ShapeCircle.xLeftTop(), ShapeCircle.yLeftTop(), ShapeCircle.xRightBottom(), ShapeCircle.yRightBottom());
 // Drawing center of circle
-	PaintBox->Canvas->Ellipse(ShapeCircle.getxCenter()-2, ShapeCircle.getyCenter()-2, ShapeCircle.getxCenter()+2, ShapeCircle.getyCenter()+2);
+	PaintBox->Canvas->Ellipse(ShapeCircle.getxCenter() - 2, ShapeCircle.getyCenter() - 2, ShapeCircle.getxCenter() + 2, ShapeCircle.getyCenter() + 2);
 // Set info
 	LabelInfoText->Caption = "Square: " + FloatToStr(ShapeCircle.Square()) + "\n" + "Perimeter: " + FloatToStr(ShapeCircle.Perimeter());
 }
@@ -854,14 +855,14 @@ void __fastcall TMainForm::SaveCenterCircleClick(TObject *Sender)
 	r.right = 1000;
 	r.Bottom = 1000;
 	r.Top = 0;
-	PaintBox->Canvas->Brush->Color=clWhite;
+	PaintBox->Canvas->Brush->Color = clWhite;
 	PaintBox->Canvas->FillRect(r);
 // Set center of circle
 	ShapeCircle.setCenter(StrToFloat(xCoordCenterCircle->Text),StrToFloat(yCoordCenterCircle->Text));
 // Drawing circle
-	PaintBox->Canvas->Ellipse(ShapeCircle.xLeftTop(),ShapeCircle.yLeftTop(),ShapeCircle.xRightBottom(),ShapeCircle.yRightBottom());
+	PaintBox->Canvas->Ellipse(ShapeCircle.xLeftTop(), ShapeCircle.yLeftTop(), ShapeCircle.xRightBottom(), ShapeCircle.yRightBottom());
 // Drawing center of circle
-	PaintBox->Canvas->Ellipse(ShapeCircle.getxCenter()-2, ShapeCircle.getyCenter()-2, ShapeCircle.getxCenter()+2, ShapeCircle.getyCenter()+2);
+	PaintBox->Canvas->Ellipse(ShapeCircle.getxCenter() - 2, ShapeCircle.getyCenter() - 2, ShapeCircle.getxCenter() + 2, ShapeCircle.getyCenter() + 2);
 // Set info
 	LabelInfoText->Caption = "Square: " + FloatToStr(ShapeCircle.Square()) + "\n" + "Perimeter: " + FloatToStr(ShapeCircle.Perimeter());
 }
@@ -875,7 +876,7 @@ void __fastcall TMainForm::TimerSizeLTimer(TObject *Sender)
 	r.right = 1000;
 	r.Bottom = 1000;
 	r.Top = 0;
-	PaintBox->Canvas->Brush->Color=clWhite;
+	PaintBox->Canvas->Brush->Color = clWhite;
 	PaintBox->Canvas->FillRect(r);
 
     float m = 0, n = 0;
@@ -888,19 +889,19 @@ void __fastcall TMainForm::TimerSizeLTimer(TObject *Sender)
 			m = ShapeTriangle.xCenter();
 			n = ShapeTriangle.yCenter();
 		// Set new center and decrease size
-			ShapeTriangle.setCenter(0,0);
-			ShapeTriangle.setPointA(ShapeTriangle.getxCoordA()*1.02,ShapeTriangle.getyCoordA()*1.02);
-			ShapeTriangle.setPointB(ShapeTriangle.getxCoordB()*1.02,ShapeTriangle.getyCoordB()*1.02);
-			ShapeTriangle.setPointC(ShapeTriangle.getxCoordC()*1.02,ShapeTriangle.getyCoordC()*1.02);
+			ShapeTriangle.setCenter(0, 0);
+			ShapeTriangle.setPointA(ShapeTriangle.getxCoordA() * 1.02, ShapeTriangle.getyCoordA() * 1.02);
+			ShapeTriangle.setPointB(ShapeTriangle.getxCoordB() * 1.02, ShapeTriangle.getyCoordB() * 1.02);
+			ShapeTriangle.setPointC(ShapeTriangle.getxCoordC() * 1.02, ShapeTriangle.getyCoordC() * 1.02);
 		// Return old center
-			ShapeTriangle.setCenter(m,n);
+			ShapeTriangle.setCenter(m, n);
 		// Redrawing triangle
-			PaintBox->Canvas->MoveTo(ShapeTriangle.getxCoordA(),ShapeTriangle.getyCoordA());
-			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordB(),ShapeTriangle.getyCoordB());
-			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordC(),ShapeTriangle.getyCoordC());
-			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordA(),ShapeTriangle.getyCoordA());
+			PaintBox->Canvas->MoveTo(ShapeTriangle.getxCoordA(), ShapeTriangle.getyCoordA());
+			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordB(), ShapeTriangle.getyCoordB());
+			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordC(), ShapeTriangle.getyCoordC());
+			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordA(), ShapeTriangle.getyCoordA());
 		// Drawing center of triangle
-			PaintBox->Canvas->Ellipse(ShapeTriangle.xCenter()-2,ShapeTriangle.yCenter()-2,ShapeTriangle.xCenter()+2,ShapeTriangle.yCenter()+2);
+			PaintBox->Canvas->Ellipse(ShapeTriangle.xCenter() - 2, ShapeTriangle.yCenter() - 2, ShapeTriangle.xCenter() + 2, ShapeTriangle.yCenter() + 2);
 		// Set info
 			LabelInfoText->Caption = "Square: " + FloatToStr(ShapeTriangle.Square()) + "\n" + "Perimeter: " + FloatToStr(ShapeTriangle.Perimeter());
 		break;
@@ -910,12 +911,12 @@ void __fastcall TMainForm::TimerSizeLTimer(TObject *Sender)
 		case 2:
 		if(ShapeCircle.getRadius() > 400) break;
 		// Set new radius
-			ShapeCircle.setRadius(ShapeCircle.getRadius()+0.5);
+			ShapeCircle.setRadius(ShapeCircle.getRadius() + 0.5);
             circleRadius->Text = FloatToStr(ShapeCircle.getRadius());
 		// Redrawing circle
-			PaintBox->Canvas->Ellipse(ShapeCircle.xLeftTop(),ShapeCircle.yLeftTop(),ShapeCircle.xRightBottom(),ShapeCircle.yRightBottom());
+			PaintBox->Canvas->Ellipse(ShapeCircle.xLeftTop(), ShapeCircle.yLeftTop(), ShapeCircle.xRightBottom(), ShapeCircle.yRightBottom());
 		// Redrawing center of circle
-			PaintBox->Canvas->Ellipse(ShapeCircle.getxCenter()-2, ShapeCircle.getyCenter()-2, ShapeCircle.getxCenter()+2, ShapeCircle.getyCenter()+2);
+			PaintBox->Canvas->Ellipse(ShapeCircle.getxCenter() - 2, ShapeCircle.getyCenter() - 2, ShapeCircle.getxCenter() + 2, ShapeCircle.getyCenter() + 2);
         // Set info
 			LabelInfoText->Caption = "Square: " + FloatToStr(ShapeCircle.Square()) + "\n" + "Perimeter: " + FloatToStr(ShapeCircle.Perimeter());
 		break;
@@ -927,14 +928,14 @@ void __fastcall TMainForm::TimerSizeLTimer(TObject *Sender)
 			m = ShapePolygon.xCenterCoord();
 			n = ShapePolygon.yCenterCoord();
 		// Set new center and decrease size
-			ShapePolygon.setCenter(0,0);
-			ShapePolygon.setPointA(ShapePolygon.getxCoordA()*1.02,ShapePolygon.getyCoordA()*1.02);
-			ShapePolygon.setPointB(ShapePolygon.getxCoordB()*1.02,ShapePolygon.getyCoordB()*1.02);
-			ShapePolygon.setPointC(ShapePolygon.getxCoordC()*1.02,ShapePolygon.getyCoordC()*1.02);
-			ShapePolygon.setPointD(ShapePolygon.getxCoordD()*1.02,ShapePolygon.getyCoordD()*1.02);
-			ShapePolygon.setPointE(ShapePolygon.getxCoordE()*1.02,ShapePolygon.getyCoordE()*1.02);
+			ShapePolygon.setCenter(0, 0);
+			ShapePolygon.setPointA(ShapePolygon.getxCoordA() * 1.02, ShapePolygon.getyCoordA() * 1.02);
+			ShapePolygon.setPointB(ShapePolygon.getxCoordB() * 1.02, ShapePolygon.getyCoordB() * 1.02);
+			ShapePolygon.setPointC(ShapePolygon.getxCoordC() * 1.02, ShapePolygon.getyCoordC() * 1.02);
+			ShapePolygon.setPointD(ShapePolygon.getxCoordD() * 1.02, ShapePolygon.getyCoordD() * 1.02);
+			ShapePolygon.setPointE(ShapePolygon.getxCoordE() * 1.02, ShapePolygon.getyCoordE() * 1.02);
 		// Return old center
-			ShapePolygon.setCenter(m,n);
+			ShapePolygon.setCenter(m, n);
 		// Set "edit" of points
 			xCoordPA->Text = FloatToStr(ShapePolygon.getxCoordA());
 			xCoordPB->Text = FloatToStr(ShapePolygon.getxCoordB());
@@ -947,15 +948,15 @@ void __fastcall TMainForm::TimerSizeLTimer(TObject *Sender)
 			yCoordPD->Text = FloatToStr(ShapePolygon.getyCoordD());
 			yCoordPE->Text = FloatToStr(ShapePolygon.getyCoordE());
 		// Drawing Polygon
-			PaintBox->Canvas->MoveTo(ShapePolygon.getxCoordA(),ShapePolygon.getyCoordA());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordB(),ShapePolygon.getyCoordB());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordC(),ShapePolygon.getyCoordC());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordD(),ShapePolygon.getyCoordD());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordE(),ShapePolygon.getyCoordE());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordA(),ShapePolygon.getyCoordA());
+			PaintBox->Canvas->MoveTo(ShapePolygon.getxCoordA(), ShapePolygon.getyCoordA());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordB(), ShapePolygon.getyCoordB());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordC(), ShapePolygon.getyCoordC());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordD(), ShapePolygon.getyCoordD());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordE(), ShapePolygon.getyCoordE());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordA(), ShapePolygon.getyCoordA());
 		// Drawing center of polygon
-			PaintBox->Canvas->MoveTo(ShapePolygon.xCenterCoord(),ShapePolygon.yCenterCoord());
-			PaintBox->Canvas->Ellipse(ShapePolygon.xCenterCoord()-2,ShapePolygon.yCenterCoord()-2,ShapePolygon.xCenterCoord()+2,ShapePolygon.yCenterCoord()+2);
+			PaintBox->Canvas->MoveTo(ShapePolygon.xCenterCoord(), ShapePolygon.yCenterCoord());
+			PaintBox->Canvas->Ellipse(ShapePolygon.xCenterCoord() - 2,ShapePolygon.yCenterCoord() - 2, ShapePolygon.xCenterCoord() + 2, ShapePolygon.yCenterCoord() + 2);
 		// Set info
 			LabelInfoText->Caption = "Square: " + FloatToStr(ShapePolygon.Square()) + "\nPerimeter: " + FloatToStr(ShapePolygon.Perimeter());
 		break;
@@ -973,7 +974,7 @@ void __fastcall TMainForm::TimerSizeSTimer(TObject *Sender)
 	r.right = 1000;
 	r.Bottom = 1000;
 	r.Top = 0;
-	PaintBox->Canvas->Brush->Color=clWhite;
+	PaintBox->Canvas->Brush->Color = clWhite;
 	PaintBox->Canvas->FillRect(r);
 
 	float m = 0, n = 0;
@@ -986,19 +987,19 @@ void __fastcall TMainForm::TimerSizeSTimer(TObject *Sender)
 			m = ShapeTriangle.xCenter();
 			n = ShapeTriangle.yCenter();
 		// Set new center and decrease size
-			ShapeTriangle.setCenter(0,0);
-			ShapeTriangle.setPointA(ShapeTriangle.getxCoordA()*0.98,ShapeTriangle.getyCoordA()*0.98);
-			ShapeTriangle.setPointB(ShapeTriangle.getxCoordB()*0.98,ShapeTriangle.getyCoordB()*0.98);
-			ShapeTriangle.setPointC(ShapeTriangle.getxCoordC()*0.98,ShapeTriangle.getyCoordC()*0.98);
+			ShapeTriangle.setCenter(0, 0);
+			ShapeTriangle.setPointA(ShapeTriangle.getxCoordA() * 0.98, ShapeTriangle.getyCoordA() * 0.98);
+			ShapeTriangle.setPointB(ShapeTriangle.getxCoordB() * 0.98, ShapeTriangle.getyCoordB() * 0.98);
+			ShapeTriangle.setPointC(ShapeTriangle.getxCoordC() * 0.98, ShapeTriangle.getyCoordC() * 0.98);
 		// Return old center
-			ShapeTriangle.setCenter(m,n);
+			ShapeTriangle.setCenter(m, n);
 		// Redrawing triangle
-			PaintBox->Canvas->MoveTo(ShapeTriangle.getxCoordA(),ShapeTriangle.getyCoordA());
-			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordB(),ShapeTriangle.getyCoordB());
-			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordC(),ShapeTriangle.getyCoordC());
-			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordA(),ShapeTriangle.getyCoordA());
+			PaintBox->Canvas->MoveTo(ShapeTriangle.getxCoordA(), ShapeTriangle.getyCoordA());
+			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordB(), ShapeTriangle.getyCoordB());
+			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordC(), ShapeTriangle.getyCoordC());
+			PaintBox->Canvas->LineTo(ShapeTriangle.getxCoordA(), ShapeTriangle.getyCoordA());
 		// Drawing center of triangle
-			PaintBox->Canvas->Ellipse(ShapeTriangle.xCenter()-2,ShapeTriangle.yCenter()-2,ShapeTriangle.xCenter()+2,ShapeTriangle.yCenter()+2);
+			PaintBox->Canvas->Ellipse(ShapeTriangle.xCenter() - 2, ShapeTriangle.yCenter() - 2, ShapeTriangle.xCenter() + 2, ShapeTriangle.yCenter() + 2);
 		// Set info
 			LabelInfoText->Caption = "Square: " + FloatToStr(ShapeTriangle.Square()) + "\n" + "Perimeter: " + FloatToStr(ShapeTriangle.Perimeter());
 		break;
@@ -1008,12 +1009,12 @@ void __fastcall TMainForm::TimerSizeSTimer(TObject *Sender)
 		case 2:
 		if(ShapeCircle.getRadius() < 2) break;
         // Set new radius
-			ShapeCircle.setRadius(ShapeCircle.getRadius()-0.5);
+			ShapeCircle.setRadius(ShapeCircle.getRadius() - 0.5);
             circleRadius->Text = FloatToStr(ShapeCircle.getRadius());
 		// Redrawing circle
-			PaintBox->Canvas->Ellipse(ShapeCircle.xLeftTop(),ShapeCircle.yLeftTop(),ShapeCircle.xRightBottom(),ShapeCircle.yRightBottom());
+			PaintBox->Canvas->Ellipse(ShapeCircle.xLeftTop(), ShapeCircle.yLeftTop(), ShapeCircle.xRightBottom(), ShapeCircle.yRightBottom());
 		// Redrawing center of circle
-			PaintBox->Canvas->Ellipse(ShapeCircle.getxCenter()-2, ShapeCircle.getyCenter()-2, ShapeCircle.getxCenter()+2, ShapeCircle.getyCenter()+2);
+			PaintBox->Canvas->Ellipse(ShapeCircle.getxCenter() - 2, ShapeCircle.getyCenter() - 2, ShapeCircle.getxCenter() + 2, ShapeCircle.getyCenter() + 2);
         // Set info
 
 			LabelInfoText->Caption = "Square: " + FloatToStr(ShapeCircle.Square()) + "\n" + "Perimeter: " + FloatToStr(ShapeCircle.Perimeter());
@@ -1026,14 +1027,14 @@ void __fastcall TMainForm::TimerSizeSTimer(TObject *Sender)
 			m = ShapePolygon.xCenterCoord();
 			n = ShapePolygon.yCenterCoord();
 		// Set new center and decrease size
-			ShapePolygon.setCenter(0,0);
-			ShapePolygon.setPointA(ShapePolygon.getxCoordA()*0.98,ShapePolygon.getyCoordA()*0.98);
-			ShapePolygon.setPointB(ShapePolygon.getxCoordB()*0.98,ShapePolygon.getyCoordB()*0.98);
-			ShapePolygon.setPointC(ShapePolygon.getxCoordC()*0.98,ShapePolygon.getyCoordC()*0.98);
-			ShapePolygon.setPointD(ShapePolygon.getxCoordD()*0.98,ShapePolygon.getyCoordD()*0.98);
-			ShapePolygon.setPointE(ShapePolygon.getxCoordE()*0.98,ShapePolygon.getyCoordE()*0.98);
+			ShapePolygon.setCenter(0, 0);
+			ShapePolygon.setPointA(ShapePolygon.getxCoordA() * 0.98, ShapePolygon.getyCoordA() * 0.98);
+			ShapePolygon.setPointB(ShapePolygon.getxCoordB() * 0.98, ShapePolygon.getyCoordB() * 0.98);
+			ShapePolygon.setPointC(ShapePolygon.getxCoordC() * 0.98, ShapePolygon.getyCoordC() * 0.98);
+			ShapePolygon.setPointD(ShapePolygon.getxCoordD() * 0.98, ShapePolygon.getyCoordD() * 0.98);
+			ShapePolygon.setPointE(ShapePolygon.getxCoordE() * 0.98, ShapePolygon.getyCoordE() * 0.98);
 		// Return old center
-			ShapePolygon.setCenter(m,n);
+			ShapePolygon.setCenter(m, n);
 		// Set "edit" of points
 			xCoordPA->Text = FloatToStr(ShapePolygon.getxCoordA());
 			xCoordPB->Text = FloatToStr(ShapePolygon.getxCoordB());
@@ -1046,15 +1047,15 @@ void __fastcall TMainForm::TimerSizeSTimer(TObject *Sender)
 			yCoordPD->Text = FloatToStr(ShapePolygon.getyCoordD());
 			yCoordPE->Text = FloatToStr(ShapePolygon.getyCoordE());
 		// Drawing Polygon
-			PaintBox->Canvas->MoveTo(ShapePolygon.getxCoordA(),ShapePolygon.getyCoordA());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordB(),ShapePolygon.getyCoordB());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordC(),ShapePolygon.getyCoordC());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordD(),ShapePolygon.getyCoordD());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordE(),ShapePolygon.getyCoordE());
-			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordA(),ShapePolygon.getyCoordA());
+			PaintBox->Canvas->MoveTo(ShapePolygon.getxCoordA(), ShapePolygon.getyCoordA());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordB(), ShapePolygon.getyCoordB());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordC(), ShapePolygon.getyCoordC());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordD(), ShapePolygon.getyCoordD());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordE(), ShapePolygon.getyCoordE());
+			PaintBox->Canvas->LineTo(ShapePolygon.getxCoordA(), ShapePolygon.getyCoordA());
 		// Drawing center of polygon
-			PaintBox->Canvas->MoveTo(ShapePolygon.xCenterCoord(),ShapePolygon.yCenterCoord());
-			PaintBox->Canvas->Ellipse(ShapePolygon.xCenterCoord()-2,ShapePolygon.yCenterCoord()-2,ShapePolygon.xCenterCoord()+2,ShapePolygon.yCenterCoord()+2);
+			PaintBox->Canvas->MoveTo(ShapePolygon.xCenterCoord(), ShapePolygon.yCenterCoord());
+			PaintBox->Canvas->Ellipse(ShapePolygon.xCenterCoord() - 2, ShapePolygon.yCenterCoord() - 2, ShapePolygon.xCenterCoord() + 2, ShapePolygon.yCenterCoord() + 2);
 		// Set info
 			LabelInfoText->Caption = "Square: " + FloatToStr(ShapePolygon.Square()) + "\nPerimeter: " + FloatToStr(ShapePolygon.Perimeter());
 		break;
@@ -1195,27 +1196,27 @@ void __fastcall TMainForm::SavePolygonPointsClick(TObject *Sender)
 	r.right = 1000;
 	r.Bottom = 1000;
 	r.Top = 0;
-	PaintBox->Canvas->Brush->Color=clWhite;
+	PaintBox->Canvas->Brush->Color = clWhite;
 	PaintBox->Canvas->FillRect(r);
 	// Save Points of Polygon
-	ShapePolygon.setPointA(StrToFloat(xCoordPA->Text),StrToFloat(yCoordPA->Text));
-	ShapePolygon.setPointB(StrToFloat(xCoordPB->Text),StrToFloat(yCoordPB->Text));
-	ShapePolygon.setPointC(StrToFloat(xCoordPC->Text),StrToFloat(yCoordPC->Text));
-	ShapePolygon.setPointD(StrToFloat(xCoordPD->Text),StrToFloat(yCoordPD->Text));
-	ShapePolygon.setPointE(StrToFloat(xCoordPE->Text),StrToFloat(yCoordPE->Text));
+	ShapePolygon.setPointA(StrToFloat(xCoordPA->Text), StrToFloat(yCoordPA->Text));
+	ShapePolygon.setPointB(StrToFloat(xCoordPB->Text), StrToFloat(yCoordPB->Text));
+	ShapePolygon.setPointC(StrToFloat(xCoordPC->Text), StrToFloat(yCoordPC->Text));
+	ShapePolygon.setPointD(StrToFloat(xCoordPD->Text), StrToFloat(yCoordPD->Text));
+	ShapePolygon.setPointE(StrToFloat(xCoordPE->Text), StrToFloat(yCoordPE->Text));
 	// Set "edit" of center
 	xCenterPolygon->Text = FloatToStr(ShapePolygon.xCenterCoord());
 	yCenterPolygon->Text = FloatToStr(ShapePolygon.yCenterCoord());
 	// Drawing Polygon
-	PaintBox->Canvas->MoveTo(ShapePolygon.getxCoordA(),ShapePolygon.getyCoordA());
-	PaintBox->Canvas->LineTo(ShapePolygon.getxCoordB(),ShapePolygon.getyCoordB());
-	PaintBox->Canvas->LineTo(ShapePolygon.getxCoordC(),ShapePolygon.getyCoordC());
-	PaintBox->Canvas->LineTo(ShapePolygon.getxCoordD(),ShapePolygon.getyCoordD());
-	PaintBox->Canvas->LineTo(ShapePolygon.getxCoordE(),ShapePolygon.getyCoordE());
-	PaintBox->Canvas->LineTo(ShapePolygon.getxCoordA(),ShapePolygon.getyCoordA());
+	PaintBox->Canvas->MoveTo(ShapePolygon.getxCoordA(), ShapePolygon.getyCoordA());
+	PaintBox->Canvas->LineTo(ShapePolygon.getxCoordB(), ShapePolygon.getyCoordB());
+	PaintBox->Canvas->LineTo(ShapePolygon.getxCoordC(), ShapePolygon.getyCoordC());
+	PaintBox->Canvas->LineTo(ShapePolygon.getxCoordD(), ShapePolygon.getyCoordD());
+	PaintBox->Canvas->LineTo(ShapePolygon.getxCoordE(), ShapePolygon.getyCoordE());
+	PaintBox->Canvas->LineTo(ShapePolygon.getxCoordA(), ShapePolygon.getyCoordA());
 	// Drawing center of polygon
-	PaintBox->Canvas->MoveTo(ShapePolygon.xCenterCoord(),ShapePolygon.yCenterCoord());
-    PaintBox->Canvas->Ellipse(ShapePolygon.xCenterCoord()-2,ShapePolygon.yCenterCoord()-2,ShapePolygon.xCenterCoord()+2,ShapePolygon.yCenterCoord()+2);
+	PaintBox->Canvas->MoveTo(ShapePolygon.xCenterCoord(), ShapePolygon.yCenterCoord());
+    PaintBox->Canvas->Ellipse(ShapePolygon.xCenterCoord() - 2, ShapePolygon.yCenterCoord() - 2,ShapePolygon.xCenterCoord() + 2,ShapePolygon.yCenterCoord() + 2);
 	// Set info
 	LabelInfoText->Caption = "Square: " + FloatToStr(ShapePolygon.Square()) + "\nPerimeter: " + FloatToStr(ShapePolygon.Perimeter());
 }
@@ -1229,10 +1230,10 @@ void __fastcall TMainForm::SaveCenterPolygonClick(TObject *Sender)
 	r.right = 1000;
 	r.Bottom = 1000;
 	r.Top = 0;
-	PaintBox->Canvas->Brush->Color=clWhite;
+	PaintBox->Canvas->Brush->Color = clWhite;
 	PaintBox->Canvas->FillRect(r);
 	// Save center of Polygon
-	ShapePolygon.setCenter(StrToFloat(xCenterPolygon->Text),StrToFloat(yCenterPolygon->Text));
+	ShapePolygon.setCenter(StrToFloat(xCenterPolygon->Text), StrToFloat(yCenterPolygon->Text));
 	// Set "edit" of points
 	xCoordPA->Text = FloatToStr(ShapePolygon.getxCoordA());
 	xCoordPB->Text = FloatToStr(ShapePolygon.getxCoordB());
@@ -1245,15 +1246,15 @@ void __fastcall TMainForm::SaveCenterPolygonClick(TObject *Sender)
 	yCoordPD->Text = FloatToStr(ShapePolygon.getyCoordD());
 	yCoordPE->Text = FloatToStr(ShapePolygon.getyCoordE());
 	// Drawing Polygon
-	PaintBox->Canvas->MoveTo(ShapePolygon.getxCoordA(),ShapePolygon.getyCoordA());
-	PaintBox->Canvas->LineTo(ShapePolygon.getxCoordB(),ShapePolygon.getyCoordB());
-	PaintBox->Canvas->LineTo(ShapePolygon.getxCoordC(),ShapePolygon.getyCoordC());
-	PaintBox->Canvas->LineTo(ShapePolygon.getxCoordD(),ShapePolygon.getyCoordD());
-	PaintBox->Canvas->LineTo(ShapePolygon.getxCoordE(),ShapePolygon.getyCoordE());
-	PaintBox->Canvas->LineTo(ShapePolygon.getxCoordA(),ShapePolygon.getyCoordA());
+	PaintBox->Canvas->MoveTo(ShapePolygon.getxCoordA(), ShapePolygon.getyCoordA());
+	PaintBox->Canvas->LineTo(ShapePolygon.getxCoordB(), ShapePolygon.getyCoordB());
+	PaintBox->Canvas->LineTo(ShapePolygon.getxCoordC(), ShapePolygon.getyCoordC());
+	PaintBox->Canvas->LineTo(ShapePolygon.getxCoordD(), ShapePolygon.getyCoordD());
+	PaintBox->Canvas->LineTo(ShapePolygon.getxCoordE(), ShapePolygon.getyCoordE());
+	PaintBox->Canvas->LineTo(ShapePolygon.getxCoordA(), ShapePolygon.getyCoordA());
 	// Drawing center of polygon
-	PaintBox->Canvas->MoveTo(ShapePolygon.xCenterCoord(),ShapePolygon.yCenterCoord());
-	PaintBox->Canvas->Ellipse(ShapePolygon.xCenterCoord()-2,ShapePolygon.yCenterCoord()-2,ShapePolygon.xCenterCoord()+2,ShapePolygon.yCenterCoord()+2);
+	PaintBox->Canvas->MoveTo(ShapePolygon.xCenterCoord(), ShapePolygon.yCenterCoord());
+	PaintBox->Canvas->Ellipse(ShapePolygon.xCenterCoord() - 2, ShapePolygon.yCenterCoord() - 2, ShapePolygon.xCenterCoord() + 2, ShapePolygon.yCenterCoord() + 2);
 	// Set info
 	LabelInfoText->Caption = "Square: " + FloatToStr(ShapePolygon.Square()) + "\nPerimeter: " + FloatToStr(ShapePolygon.Perimeter());
 }
